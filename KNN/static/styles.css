@@ -1,0 +1,71 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.custom-predict {
+    margin-top: 20px;
+}
+
+#input-data {
+    padding: 5px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.output {
+    margin-top: 20px;
+}
+
+#output-text {
+    font-size: 18px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+#topLeftImage {
+    position: absolute; /* Position the image relative to the viewport */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+}

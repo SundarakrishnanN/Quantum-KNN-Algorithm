@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation of KNN Algorithm in Qiskit</title>
+    <link rel="stylesheet" href="\static\styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="title">Implementation of KNN Algorithm in Qiskit</h1>
+        <form id="test" method="POST">
+            <button id="random-predict-button" class="button" name="btn" action="submit" value="random">Random Predict</button>
+        </form>
+        
+        <div class="custom-predict">
+            <form id="data points" method="POST">
+            <input type="number" step="0.1" id="p1" name="p1" placeholder="Sepal Length" required="true">
+            <input type="number" step="0.1" id="p2" name="p2" placeholder="Sepal Width" required="true">
+            <input type="number" step="0.1" id="p3" name="p3" placeholder="Petal Length" required="true">
+            <input type="number" step="0.1" id="p4" name="p4" placeholder="Petal Width" required="true">
+            <button id="custom-predict-button" class="button" action="submit" name="btn"  value="custom">Custom Predict</button>
+        </form>
+        <p id="displayText"></p>
+        <script>
+            // Get references to the buttons and div element
+            var randomPredictButton = document.getElementById('random-predict-button');
+            var button2 = document.getElementById('custom-predict-button');
+            var displayDiv = document.getElementById('displayText');
+    
+            // Function to handle button clicks
+            function displayTextOnClick() {
+                // Change the text content of the div when either button is clicked
+                displayDiv.textContent = 'Predicting....';
+            }
+    
+            // Add click event listeners to both buttons that call the same function
+            randomPredictButton.addEventListener('click', displayTextOnClick);
+            button2.addEventListener('click', displayTextOnClick);
+        </script>
+        </div>
+        <div class="output">
+            <p id="output-text">
+                {% if loading == "False" %}
+                
+                <table>
+                    {%if label!=None %}
+                    <tr>
+                        <td>Expected output</td>
+                        {% for cell in label %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <td>QKNN Prediction</td>
+                        {% for cell in prediction %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td>Classical KNN Prediction</td>
+                        {% for cell in classicalPred %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+                {% else %}
+                {{loading}}
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
